@@ -9,6 +9,7 @@ RPC_ADDRESS="http://localhost:26657"
 SNAP_NAME=$(echo "${CHAIN_ID}_$(date '+%Y-%m-%d').tar")
 OLD_SNAP=$(ls ${SNAP_PATH} | egrep -o "${CHAIN_ID}.*tar")
 
+mkdir -p $SNAP_PATH
 
 now_date() {
     echo -n $(TZ=":Europe/Moscow" date '+%Y-%m-%d_%H:%M:%S')
@@ -26,13 +27,13 @@ LAST_BLOCK_HEIGHT=$(curl -s ${RPC_ADDRESS}/status | jq -r .result.sync_info.late
 log_this "LAST_BLOCK_HEIGHT ${LAST_BLOCK_HEIGHT}"
 
 log_this "Stopping ${SERVICE_NAME}"
-systemctl stop ${SERVICE_NAME}; echo $? >> ${LOG_PATH}
+sudo systemctl stop ${SERVICE_NAME}; echo $? >> ${LOG_PATH}
 
 log_this "Creating new snapshot"
 time tar cf ${HOME}/${SNAP_NAME} -C ${DATA_PATH} . &>>${LOG_PATH}
 
 log_this "Starting ${SERVICE_NAME}"
-systemctl start ${SERVICE_NAME}; echo $? >> ${LOG_PATH}
+sudo systemctl start ${SERVICE_NAME}; echo $? >> ${LOG_PATH}
 
 log_this "Removing old snapshot(s):"
 cd ${SNAP_PATH}
