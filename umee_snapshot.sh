@@ -1,4 +1,5 @@
 #!/bin/bash
+# umee testnet
 CHAIN_ID="umee-alpha-mainnet-2"
 SNAP_PATH="$HOME/umee_snapshots"
 LOG_PATH="$HOME/umee_snapshots/umee_log.txt"
