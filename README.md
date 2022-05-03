@@ -1,6 +1,11 @@
 # cosmos-snapshots  
 List of snapshots:   
 http://135.181.60.250/      - Akash Network (Mainnet) truncated via statesync  
+http://135.181.181.121/akash/  
+http://135.181.181.119/akash/  
+http://135.181.181.123/akash  
+http://135.181.181.122/akash  
+
 http://135.181.60.250:8081/ - Sifchain (Betanet) truncated via statesync  
 http://135.181.60.250:8083/ - Sentinel (Mainnet truncated via statesync   
 http://135.181.60.250:8084/ - Desmos (Mainnet) truncated via statesync  
@@ -19,8 +24,6 @@ https://cosmos-snap.staketab.com/comdex - Comdex (Mainnet)
 https://cosmos-snap.staketab.com/axelar - Axelar (Mainnet)  
 https://mercury-nodes.net/kichain-snaps/ - Kichain (Mainnet)  
 
-http://135.181.60.250:5889/ - Archway (TESTNET) truncated via statesync  
-
 [Akash snapshot instruction](https://github.com/c29r3/cosmos-snapshots/blob/main/Akash.md)  
 [Agoric snapshot instruction](https://github.com/c29r3/cosmos-snapshots/blob/main/Agoric.md)  
 [Sifchain snapshot instruction](https://github.com/c29r3/cosmos-snapshots/blob/main/Sifchain.md)  
@@ -35,8 +38,6 @@ http://135.181.60.250:5889/ - Archway (TESTNET) truncated via statesync
 [Stargaze snapshot instruction(Staketab)](https://github.com/staketab/nginx-cosmos-snap/blob/main/docs/stargaze.md)  
 [Comdex snapshot instruction(Staketab)](https://github.com/staketab/nginx-cosmos-snap/blob/main/docs/comdex.md)  
 [Axelar snapshot instruction(Staketab)](https://github.com/staketab/nginx-cosmos-snap/blob/main/docs/axelar.md)  
-
-[Archway snapshot instruction](https://github.com/c29r3/cosmos-snapshots/blob/main/Archway.md)   
 
 ## MIRRORS  
 http://rpc01-skynet.paullovette.com/ - provided by Paul Lovette  
@@ -61,6 +62,39 @@ https://snapshots.stake2.me/ - provided by [Danil Ushakov](https://github.com/k0
 - Sifchain
 - Stargaze
 
+
+https://snapshot.notional.ventures/ - provided by [Notional](https://github.com/notional-labs)
+- Cosmoshub
+- Osmosis
+- Juno
+- Starname
+- Regen
+- Akash
+- Sentinel
+- E-money
+- Terra
+- Ixo
+- Sifchain
+- Likecoin
+- Kichain
+- Cyber
+- Cheqd
+- Stargaze
+- Band
+- Chihuahua
+- Kava
+- Bitcanna
+- Konstellation
+- Omniflixhub
+- Vidulum
+- Provenance
+- Dig
+- Gravity bridge
+- Comdex
+- Cerberus
+- Bitsong
+- AssetMantle
+- FetchAI
 
 ## Run your own backup server with snapshots  
 Install requirements  
