@@ -3,9 +3,11 @@ CHAIN_ID="nyx"
 SNAP_PATH="$HOME/nyx_snapshots"
 LOG_PATH="$HOME/nyx_snapshots/nyx_log.txt"
 DATA_PATH="$HOME/.nyxd/data/"
+WASM_PATH="$HOME/.nyxd/wasm/"
 SERVICE_NAME="nyxd.service"
-RPC_ADDRESS="http://localhost:26657"
+RPC_ADDRESS="http://localhost:34657"
 SNAP_NAME=$(echo "${CHAIN_ID}_$(date '+%Y-%m-%d').tar")
+WASM_SNAP_NAME=$(echo "${CHAIN_ID}_wasm_$(date '+%Y-%m-%d').tar")
 OLD_SNAP=$(ls ${SNAP_PATH} | egrep -o "${CHAIN_ID}.*tar")
 
 mkdir -p $SNAP_PATH
@@ -30,6 +32,9 @@ sudo systemctl stop ${SERVICE_NAME}; echo $? >> ${LOG_PATH}
 
 log_this "Creating new snapshot"
 time tar cf ${HOME}/${SNAP_NAME} -C ${DATA_PATH} . &>>${LOG_PATH}
+
+log_this "Creating new cosmwasm snapshot"
+time tar cf ${HOME}/${WASM_SNAP_NAME} -C ${WASM_PATH} . &>>${LOG_PATH}
 
 log_this "Starting ${SERVICE_NAME}"
 sudo systemctl start ${SERVICE_NAME}; echo $? >> ${LOG_PATH}
